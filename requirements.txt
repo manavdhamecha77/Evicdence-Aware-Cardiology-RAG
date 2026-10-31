@@ -1,3 +1,4 @@
 streamlit==1.40.2
+numpy==2.2.6
 pytest==8.3.4
 sentence-transformers==6.1.0

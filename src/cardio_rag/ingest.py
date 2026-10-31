@@ -49,8 +49,17 @@ def ingest(manifest_path: Path, output_path: Path, chunk_words: int = 550, overl
     return count
 
 
-def read_chunks(path: Path) -> list[Chunk]:
+def read_chunks(path: Path, source_manifest_path: Path | None = None) -> list[Chunk]:
     chunks: list[Chunk] = []
+    sources: dict[str, dict[str, str]] = {}
+    if source_manifest_path:
+        try:
+            source_records = json.loads(source_manifest_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise ValueError(f"Cannot read source metadata {source_manifest_path}: {exc}") from exc
+        if not isinstance(source_records, list):
+            raise ValueError("source metadata must be a JSON list")
+        sources = {str(row["document_id"]): row for row in source_records}
     try:
         with path.open(encoding="utf-8") as source:
             for line_number, line in enumerate(source, start=1):
@@ -58,9 +67,34 @@ def read_chunks(path: Path) -> list[Chunk]:
                     continue
                 try:
                     record = json.loads(line)
-                    chunks.append(Chunk(**record))
+                    if REQUIRED_FIELDS - {"path"} <= record.keys():
+                        chunks.append(Chunk(**record))
+                    elif {"chunk_id", "source_doc", "text"} <= record.keys():
+                        source_doc = str(record["source_doc"])
+                        metadata = sources.get(source_doc)
+                        if metadata is None:
+                            raise ValueError(
+                                f"Pre-chunked record references {source_doc!r}; "
+                                "provide --source-manifest with provenance metadata"
+                            )
+                        chunks.append(Chunk(
+                            chunk_id=str(record["chunk_id"]),
+                            document_id=source_doc,
+                            title=str(metadata["title"]),
+                            publisher=str(metadata["publisher"]),
+                            url=str(metadata["url"]),
+                            accessed_date=str(metadata.get("accessed_date") or "unknown"),
+                            license_note=str(metadata["license_note"]),
+                            section=str(record.get("section_heading") or f"Page {record.get('page', 'unknown')}"),
+                            text=str(record["text"]),
+                            published_date=metadata.get("published_date"),
+                        ))
+                    else:
+                        raise TypeError("unrecognized chunk schema")
                 except (json.JSONDecodeError, TypeError) as exc:
                     raise ValueError(f"Malformed chunk record at {path}:{line_number}") from exc
+                except ValueError as exc:
+                    raise ValueError(f"Invalid chunk record at {path}:{line_number}: {exc}") from exc
     except OSError as exc:
         raise ValueError(f"Cannot read corpus {path}: {exc}") from exc
     return chunks

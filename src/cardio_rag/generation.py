@@ -27,7 +27,9 @@ class Generator(Protocol):
     provider: str
     model: str
 
-    def generate(self, question: str, results: list[RetrievedChunk]) -> GenerationResult: ...
+    def generate(
+        self, question: str, results: list[RetrievedChunk], options: dict[str, str] | None = None
+    ) -> GenerationResult: ...
 
 
 def extractive_answer(results: list[RetrievedChunk], max_sentences: int = 3) -> tuple[str, list[str]]:
@@ -50,43 +52,63 @@ class ExtractiveGenerator:
     provider = "extractive"
     model = "deterministic-extractive-v1"
 
-    def generate(self, question: str, results: list[RetrievedChunk]) -> GenerationResult:
+    def generate(self, question: str, results: list[RetrievedChunk], options: dict[str, str] | None = None) -> GenerationResult:
+        if options:
+            raise GenerationError("The extractive fallback cannot answer multiple-choice questions.")
         answer, _ = extractive_answer(results)
         return GenerationResult(answer, self.provider, self.model)
 
 
 class OpenAICompatibleGenerator:
     def __init__(self, api_key: str, model: str, base_url: str = "https://api.openai.com/v1", timeout: float = 45.0):
-        if not api_key.strip() or not model.strip():
-            raise ValueError("API key and model must be non-empty")
+        local_endpoint = base_url.startswith(("http://localhost", "http://127.0.0.1"))
+        if (not api_key.strip() and not local_endpoint) or not model.strip():
+            raise ValueError("A model name and either an API key or local Ollama endpoint are required")
         self.api_key = api_key
         self.model = model
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout
         self.provider = "ollama_openai_compatible" if "ollama.com" in self.base_url or "localhost:11434" in self.base_url else "openai_chat_completions"
 
-    def generate(self, question: str, results: list[RetrievedChunk]) -> GenerationResult:
+    def generate(
+        self, question: str, results: list[RetrievedChunk], options: dict[str, str] | None = None
+    ) -> GenerationResult:
         context = "\n\n".join(
             f"[{item.chunk.chunk_id}] {item.chunk.title} | {item.chunk.publisher} | {item.chunk.url}\n{item.chunk.text}"
             for item in results
         )
+        if options:
+            option_text = "\n".join(f"{key}) {value}" for key, value in options.items())
+            system_prompt = (
+                "You are answering an educational cardiology multiple-choice benchmark. Use the supplied passages "
+                "as evidence and choose exactly one of A, B, C, or D. Evidence-gated variants handle abstention "
+                "before generation. Output exactly one line and nothing else, in this format: FINAL ANSWER: A. "
+                "Do not include reasoning or citations."
+            )
+            user_prompt = (
+                f"Question stem:\n{question}\n\nOptions:\n{option_text}\n\n"
+                f"Source passages:\n{context}"
+            )
+        else:
+            system_prompt = (
+                "Answer educational cardiology questions only from the supplied source passages. "
+                "Cite every factual claim with one or more exact retrieved chunk IDs in square brackets. "
+                "If the passages do not support an answer, say the evidence is insufficient. "
+                "Do not give personalized diagnosis or treatment advice. Keep the answer concise."
+            )
+            user_prompt = f"Question: {question}\n\nSource passages:\n{context}"
         messages = [
-            {
-                "role": "system",
-                "content": (
-                    "Answer educational cardiology questions only from the supplied source passages. "
-                    "Cite every factual claim with one or more exact retrieved chunk IDs in square brackets. "
-                    "If the passages do not support an answer, say the evidence is insufficient. "
-                    "Do not give personalized diagnosis or treatment advice. Keep the answer concise."
-                ),
-            },
-            {"role": "user", "content": f"Question: {question}\n\nSource passages:\n{context}"},
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
         ]
         payload = json.dumps({"model": self.model, "messages": messages, "temperature": 0}).encode("utf-8")
+        headers = {"Content-Type": "application/json"}
+        if self.api_key:
+            headers["Authorization"] = f"Bearer {self.api_key}"
         request = Request(
             f"{self.base_url}/chat/completions",
             data=payload,
-            headers={"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"},
+            headers=headers,
             method="POST",
         )
         try:
@@ -146,6 +168,19 @@ def generator_from_environment() -> Generator:
     ollama_key = settings.get("OLLAMA_API_KEY", "").strip()
     api_key = ollama_key or settings.get("OPENAI_API_KEY", "").strip()
     if not api_key:
+        local_model = settings.get("OLLAMA_MODEL", "").strip()
+        local_base_url = (
+            settings.get("OLLAMA_BASE_URL", "").strip()
+            or settings.get("OLLAMA_HOST", "").strip()
+        )
+        if local_model and not local_base_url:
+            local_base_url = "http://localhost:11434/v1"
+        if local_model and local_base_url.startswith(("http://localhost", "http://127.0.0.1")):
+            if not local_base_url.rstrip("/").endswith("/v1"):
+                local_base_url = local_base_url.rstrip("/") + "/v1"
+            return OpenAICompatibleGenerator("", local_model, local_base_url)
+        if local_model and local_base_url.startswith("https://"):
+            raise GenerationError("OLLAMA_API_KEY is required for the configured remote Ollama endpoint.")
         return ExtractiveGenerator()
     model = settings.get("OLLAMA_MODEL", "").strip() or settings.get("OPENAI_MODEL", "").strip()
     if not model:
