@@ -1,0 +1,13 @@
+D4 KNOWLEDGE BASE FREEZE MANIFEST
+==================================================
+Source PDFs Processed: 3
+
+Arm 1 (Naive Fixed-Size Chunks):
+File: Knowledge_Base\indexed_chunks\D4_cardiology_kb.jsonl
+Count: 959
+SHA-256: 8977352040efbee3926d6c4e0641f833c0903ba5abaaf280de080e228e1901b0
+
+Arm 2 (Heading-Aware Capped Chunks):
+File: Knowledge_Base\indexed_chunks\D4_cardiology_kb_hierarchical.jsonl
+Count: 1055
+SHA-256: 949364fad322bc5aa436733d84f5e24f8c76149c6a78c32d3d9ca3257b413b3b

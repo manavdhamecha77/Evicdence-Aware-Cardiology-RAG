@@ -1,0 +1,24 @@
+# Python bytecode & environments
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+.venv/
+env/
+
+# Raw Guideline PDFs (Keep directory structure, ignore binaries)
+Knowledge_Base/raw_guidelines/*.pdf
+*.pdf
+
+# Operating system artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Audit and intermediate scratch logs
+audit_report.txt
+*.log
+
+# Optional: Archive folder (if you kept uncleaned raw files locally)
+archive_raw/

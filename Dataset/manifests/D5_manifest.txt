@@ -1,0 +1,5 @@
+D5 RETRIEVAL BENCHMARK MANIFEST
+==================================================
+Total Evaluated Retrieval Pairs: 46
+File: D5_retrieval_benchmark.jsonl
+SHA-256: f86dc24eb0b0e1911dba4b5d49b36900a4d5ea832a27a0e81f0f73fbe6cdb5b5

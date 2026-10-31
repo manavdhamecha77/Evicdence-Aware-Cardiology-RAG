@@ -1,0 +1,18 @@
+D3 PERTURBATION TEST SETS MANIFEST
+==================================================
+File: artifacts/D3_P1_permutations.jsonl
+Count: 609
+SHA-256: 947c8cc38c4329c0c084e099f359359c6b4ff90ad04b6c0872376519e08ebcbc
+
+File: artifacts/D3_P3_noise.jsonl
+Count: 273
+SHA-256: 5418e169a15a068dda44def8a6540ea13c81248a6e7a8be3c8d376be56d3c648
+
+File: artifacts/D3_P4_jitter.jsonl
+Count: 200
+SHA-256: aca27db002f8a3460986655e53953a776e318bbdecc6e0b5166657239af6dff7
+
+File: artifacts/D3_P5_stripped.jsonl
+Count: 21
+SHA-256: ef4cba0fe48d0cd6ce420d57f3849a63bab6be8d19eeb45ef7c2ebc126daa20d
+

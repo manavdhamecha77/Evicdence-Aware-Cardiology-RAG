@@ -1,0 +1,5 @@
+D6 PROGRESSIVE REVEAL TRAJECTORY MANIFEST
+==================================================
+File: artifacts/D6_progressive_reveal.jsonl
+Count: 100
+SHA-256: 4543a497ada11d65ca0444b2a37ab9d424ae709c97585fc84a8aacd4dede35b3

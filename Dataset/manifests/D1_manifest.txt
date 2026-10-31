@@ -1,0 +1,5 @@
+D1 REAL-WORLD CLINICAL CASES MANIFEST
+==================================================
+File: artifacts/D1_cases_staged.jsonl
+Count: 100
+SHA-256: d92e30b91a1f36a7724444612dae79676d8a481cfd4a6854027cfd06f32ee66c

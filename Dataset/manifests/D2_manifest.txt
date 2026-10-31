@@ -1,0 +1,14 @@
+D2 DATASET FREEZE MANIFEST
+============================================================
+File: artifacts/D2_test_clean.jsonl
+Count: 609
+SHA-256: e2fa56d15a5bf85e9e22e3de96ce554586a86165e2b8ae48823a67603e6437b1
+
+File: artifacts/D2_val_clean.jsonl
+Count: 613
+SHA-256: c306b38e2f25ba7144d18fa1c7a055ab4a75f0ad96b611acab7a1f8ff06be4d1
+
+File: artifacts/D2_train_clean.jsonl
+Count: 4910
+SHA-256: e0f3ffe98b28a36d4c76c1fc581360da689d19fe645d4537ebbf89dd59abc154
+

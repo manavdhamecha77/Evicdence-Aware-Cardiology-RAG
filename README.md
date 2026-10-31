@@ -14,6 +14,24 @@ A local research prototype comparing fixed top-k retrieval with evidence-gated r
 
 No source corpus or benchmark questions are bundled. Add permitted public educational source files and document each one's provenance and usage terms in `data/sources/manifest.json`. Do not use patient records. Do not report experiment results until you have supplied a corpus/questions and run the evaluation.
 
+## Local MedQA-USMLE question data
+
+An external MedQA-USMLE copy may be placed under `data/MedQA-USMLE/`; that directory and `data/archive.zip` are ignored by Git. Its US `dev.jsonl` and `test.jsonl` splits are a possible secondary set of USMLE-style multiple-choice questions, not a consumer cardiology FAQ benchmark. Generate cardiology keyword candidates for manual review while preserving the official split:
+
+```powershell
+python scripts/prepare_medqa_candidates.py
+python scripts/prepare_medqa_candidates.py --split dev
+```
+
+The script reads one official split at a time, includes answer choices and reference answers, and writes a review-only candidate JSONL under `data/processed/`. Keyword matches are overinclusive and must be manually checked; the output is not a vetted cardiology set or a benchmark result. The normal evaluator does not consume this file automatically. Create a provenance manifest for the supplied English textbook extracts and ingest them locally with:
+
+```powershell
+python scripts/prepare_medqa_manifest.py
+python -m cardio_rag.cli ingest --manifest data/processed/medqa_sources_manifest.json --output data/processed/medqa_chunks.jsonl
+```
+
+The MedQA paper describes its textbook collection as released under a research-use-only license agreement. Use only under the terms applicable to your copy; do not redistribute source text or derived passages. Preserve provenance and cite the dataset paper.
+
 See [docs/TODO.md](docs/TODO.md) for the next research and implementation tasks.
 
 ## Setup (PowerShell)
@@ -57,6 +75,17 @@ python -m cardio_rag.cli ingest
 ```
 
 Chunk defaults are 550 whitespace-delimited words with 80 words of overlap. The generated `data/processed/chunks.jsonl` is ignored by Git; preserve your source files and manifest to reproduce it.
+
+## Prepare the supplied NHLBI data
+
+The optional `prepared_data/` folder contains NHLBI QA candidates, downloaded page text, and pre-split passages. Build app-compatible chunks and deterministic, document-grouped candidate splits with the existing uv environment:
+
+```powershell
+$env:UV_CACHE_DIR = Join-Path (Get-Location) '.uv-cache'
+uv run --python .venv\Scripts\python.exe python scripts\prepare_nhlbi_evaluation.py
+```
+
+Outputs are written to `prepared_data/processed/`: `chunks.jsonl`, `all_candidates.jsonl`, `train.jsonl`, `dev.jsonl`, and `test.jsonl`, plus `review_template.csv` and a preprocessing report. All questions from a source document stay in the same split. Relevance suggestions are stored as `candidate_retrieved_chunk_ids`; `relevant_chunk_ids` intentionally remains empty until passages are reviewed. These candidate splits are not benchmark results until question relevance, source captures, reference answers, source terms, answerability, and supporting chunks are reviewed. See [prepared_data/dataset desc.md](prepared_data/dataset%20desc.md).
 
 ## Ask and evaluate
 

@@ -1,5 +1,6 @@
 import math
 import hashlib
+import heapq
 import json
 import re
 from collections import Counter
@@ -22,12 +23,16 @@ class LexicalIndex:
         self.chunks = chunks
         self.k1 = k1
         self.b = b
-        self.tokens = [tokenize(chunk.text) for chunk in chunks]
-        self.lengths = [len(item) for item in self.tokens]
-        self.average_length = sum(self.lengths) / len(self.lengths) if chunks else 0.0
+        self.lengths: list[int] = []
+        self.postings: dict[str, list[tuple[int, int]]] = {}
         self.document_frequency: Counter[str] = Counter()
-        for tokens in self.tokens:
-            self.document_frequency.update(set(tokens))
+        for document_id, chunk in enumerate(chunks):
+            term_frequencies = Counter(tokenize(chunk.text))
+            self.lengths.append(sum(term_frequencies.values()))
+            for term, frequency in term_frequencies.items():
+                self.postings.setdefault(term, []).append((document_id, frequency))
+                self.document_frequency[term] += 1
+        self.average_length = sum(self.lengths) / len(self.lengths) if chunks else 0.0
 
     def retrieve(self, query: str, k: int = 4) -> list[RetrievedChunk]:
         if not self.chunks or k < 1:
@@ -35,21 +40,25 @@ class LexicalIndex:
         terms = set(tokenize(query))
         if not terms:
             return []
-        scored: list[RetrievedChunk] = []
         total = len(self.chunks)
-        for chunk, tokens, length in zip(self.chunks, self.tokens, self.lengths):
-            counts = Counter(tokens)
-            score = 0.0
-            for term in terms:
-                frequency = counts[term]
-                if not frequency:
-                    continue
-                inverse_frequency = math.log(1 + (total - self.document_frequency[term] + 0.5) / (self.document_frequency[term] + 0.5))
+        scores = [0.0] * total
+        for term in terms:
+            document_frequency = self.document_frequency.get(term, 0)
+            if not document_frequency:
+                continue
+            inverse_frequency = math.log(1 + (total - document_frequency + 0.5) / (document_frequency + 0.5))
+            for document_id, frequency in self.postings[term]:
+                length = self.lengths[document_id]
                 denominator = frequency + self.k1 * (1 - self.b + self.b * length / max(self.average_length, 1))
-                score += inverse_frequency * frequency * (self.k1 + 1) / denominator
-            normalized = score / (score + 2.0) if score > 0 else 0.0
-            scored.append(RetrievedChunk(chunk, normalized))
-        return sorted(scored, key=lambda result: (-result.score, result.chunk.chunk_id))[:k]
+                scores[document_id] += inverse_frequency * frequency * (self.k1 + 1) / denominator
+        ranked_ids = heapq.nsmallest(k, range(total), key=lambda i: (-scores[i], self.chunks[i].chunk_id))
+        return [
+            RetrievedChunk(
+                self.chunks[document_id],
+                scores[document_id] / (scores[document_id] + 2.0) if scores[document_id] > 0 else 0.0,
+            )
+            for document_id in ranked_ids
+        ]
 
 
 class TextEncoder(Protocol):
