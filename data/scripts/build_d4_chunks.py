@@ -4,8 +4,8 @@ import json
 import hashlib
 from pypdf import PdfReader
 
-GUIDELINES_DIR = os.path.join("Knowledge_Base", "raw_guidelines")
-OUTPUT_CHUNKS_DIR = os.path.join("Knowledge_Base", "indexed_chunks")
+GUIDELINES_DIR = os.path.join("knowledge base", "raw guidelines")
+OUTPUT_CHUNKS_DIR = os.path.join("knowledge base", "indexed chunks")
 OUTPUT_FILE = os.path.join(OUTPUT_CHUNKS_DIR, "D4_cardiology_kb.jsonl")
 MANIFEST_FILE = "D4_manifest.txt"
 
@@ -48,7 +48,7 @@ def main():
     pdf_files = [f for f in os.listdir(GUIDELINES_DIR) if f.lower().endswith(".pdf")]
     print(f"Found {len(pdf_files)} guideline PDFs in {GUIDELINES_DIR}")
     if not pdf_files:
-        print("ERROR: No PDF files located in raw_guidelines folder. Please copy them over.")
+        print("ERROR: No PDF files located in the raw guidelines folder. Please copy them over.")
         return
 
     all_chunks = []

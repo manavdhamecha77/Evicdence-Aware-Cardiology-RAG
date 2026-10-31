@@ -3,7 +3,7 @@
 audit_data.py - sanity-check the frozen Cardiology-Chat data artifacts (D1-D6).
 
 Usage (Windows):
-    python audit_data.py --root "D:\\Coding\\Projects\\Academic\\CC\\Dataset"
+    python audit_data.py --root "D:\\Coding\\Projects\\Academic\\Cardiology Chat\\data"
 
 Writes audit_report.txt into the root folder. Field names are guessed from
 common alternatives, so if a section prints "could not find field ...",
@@ -156,7 +156,7 @@ def sec_hashes(root):
         hashes |= hs
         say("INFO", f"{m.name}: {len(hs)} hash(es) listed")
     files = sorted((root / "artifacts").glob("*.jsonl")) + \
-        sorted((root / "Knowledge_Base" / "indexed_chunks").glob("*.jsonl"))
+        sorted((root / "knowledge base" / "indexed chunks").glob("*.jsonl"))
     for f in files:
         h = hashlib.sha256(f.read_bytes()).hexdigest()
         n = sum(1 for l in f.open(encoding="utf-8") if l.strip())
@@ -387,7 +387,7 @@ def sec_d1(root):
 def sec_d4(root, d1, d2):
     head("D4 knowledge base")
     out = {}
-    for path in sorted((root / "Knowledge_Base" / "indexed_chunks").glob("*.jsonl")):
+    for path in sorted((root / "knowledge base" / "indexed chunks").glob("*.jsonl")):
         kb, _ = load(path)
         if not kb:
             continue

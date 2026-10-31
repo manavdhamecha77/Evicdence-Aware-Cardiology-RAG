@@ -1,0 +1,614 @@
+{
+  "sample_n": 100,
+  "seed": 17,
+  "top1_min": 0.8744607933066754,
+  "top1_p10": 0.9255834604137503,
+  "top1_p15": 0.9293819529737769,
+  "top1_p50": 0.9566084128268415,
+  "top1_p85": 0.9676138319890069,
+  "top1_max": 0.9791834765555397,
+  "zero_score_count": 0,
+  "below_0_08_count": 0,
+  "scores": [
+    {
+      "question_id": "medmcqa_323b607f-e4dd-4f78-9fa2-4242c51b2304",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9542631902535682
+    },
+    {
+      "question_id": "medmcqa_dfa0f90a-6c42-4173-b807-5d361a5a77af",
+      "source": "medmcqa",
+      "category": "Unknown",
+      "top1_score": 0.9249836060575054
+    },
+    {
+      "question_id": "medmcqa_0df537bb-a632-489f-ad81-622b19a6b4c1",
+      "source": "medmcqa",
+      "category": "Ophthalmology",
+      "top1_score": 0.9574335219551499
+    },
+    {
+      "question_id": "medmcqa_c1a5c2e7-e474-4976-8bdf-e69301f37f72",
+      "source": "medmcqa",
+      "category": "Pathology",
+      "top1_score": 0.9337264260545792
+    },
+    {
+      "question_id": "medmcqa_104e6328-598d-4dac-b8f6-1f1bd44ca992",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.8776661518184826
+    },
+    {
+      "question_id": "medqa_9402",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9634487959563588
+    },
+    {
+      "question_id": "medmcqa_fe8a620a-28e1-4ae4-8c82-49bf9a536f8a",
+      "source": "medmcqa",
+      "category": "Unknown",
+      "top1_score": 0.9537858612577497
+    },
+    {
+      "question_id": "medmcqa_54dd46c8-7afb-4014-a02a-f89fa2f43cf2",
+      "source": "medmcqa",
+      "category": "Pharmacology",
+      "top1_score": 0.9297915656484623
+    },
+    {
+      "question_id": "medqa_5973",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9644636522098802
+    },
+    {
+      "question_id": "medqa_7464",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.956396467828719
+    },
+    {
+      "question_id": "medqa_5712",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9545008821758661
+    },
+    {
+      "question_id": "medmcqa_edd5e329-8fce-445f-a5ed-e11905585e97",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9598770929490896
+    },
+    {
+      "question_id": "medmcqa_897d6414-57a4-458a-bf59-c5c36436f60a",
+      "source": "medmcqa",
+      "category": "Surgery",
+      "top1_score": 0.9519654850836747
+    },
+    {
+      "question_id": "medqa_5250",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9374740312687813
+    },
+    {
+      "question_id": "medmcqa_4ed8451a-81dd-4f49-b61a-5f5a8b13afa9",
+      "source": "medmcqa",
+      "category": "Radiology",
+      "top1_score": 0.9416564920773539
+    },
+    {
+      "question_id": "medmcqa_7e77627d-49b6-45ea-96b8-eaeed6960782",
+      "source": "medmcqa",
+      "category": "Dental",
+      "top1_score": 0.8992009716971111
+    },
+    {
+      "question_id": "medmcqa_9cc50a29-652d-4425-b418-2bbf4b151781",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9369495380470921
+    },
+    {
+      "question_id": "medqa_5655",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9604554206121562
+    },
+    {
+      "question_id": "medmcqa_9aaecb54-acf0-4573-9c7e-0f6f16c498c5",
+      "source": "medmcqa",
+      "category": "Anaesthesia",
+      "top1_score": 0.9585916204822108
+    },
+    {
+      "question_id": "medqa_3830",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9521746316566803
+    },
+    {
+      "question_id": "medqa_9657",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9791834765555397
+    },
+    {
+      "question_id": "medqa_7727",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9584442379821035
+    },
+    {
+      "question_id": "medqa_5220",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9582963213129863
+    },
+    {
+      "question_id": "medmcqa_ed36bc6c-0a85-427f-9889-841d147fbb82",
+      "source": "medmcqa",
+      "category": "Pathology",
+      "top1_score": 0.9375313935868999
+    },
+    {
+      "question_id": "medmcqa_a04a383f-13c6-41f8-b9e2-77a2cda74ee4",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9465955076906638
+    },
+    {
+      "question_id": "medqa_3384",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9568203578249641
+    },
+    {
+      "question_id": "medmcqa_39859659-3e19-4f5a-a8da-0212c931ea4e",
+      "source": "medmcqa",
+      "category": "Gynaecology & Obstetrics",
+      "top1_score": 0.9321099827283424
+    },
+    {
+      "question_id": "medmcqa_140ef036-3b87-43cd-b1ac-b7e0fed0fd7d",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9651444701994244
+    },
+    {
+      "question_id": "medqa_3199",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9661156941007365
+    },
+    {
+      "question_id": "medqa_2975",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9639513383945023
+    },
+    {
+      "question_id": "medmcqa_4e9b664c-893e-4745-bf32-3df15ee66b39",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9600707736486878
+    },
+    {
+      "question_id": "medmcqa_18e5d2f4-6c4d-47d6-850e-caef4182f484",
+      "source": "medmcqa",
+      "category": "Surgery",
+      "top1_score": 0.9433293229894795
+    },
+    {
+      "question_id": "medqa_1843",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9678453037724969
+    },
+    {
+      "question_id": "medmcqa_de15a0a0-6ff8-4496-a469-afa1bd5330f6",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9573185856141636
+    },
+    {
+      "question_id": "medmcqa_0a458506-183e-4e18-bad2-290c78ba7a75",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9557522074415598
+    },
+    {
+      "question_id": "medqa_4764",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9630368533417811
+    },
+    {
+      "question_id": "medmcqa_2560b7e4-01e9-4e74-b8db-b3668c80c8c2",
+      "source": "medmcqa",
+      "category": "Anatomy",
+      "top1_score": 0.959214103851481
+    },
+    {
+      "question_id": "medmcqa_481ecf54-6dd6-4659-b5cf-7d2dbe4f273f",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9573185856141636
+    },
+    {
+      "question_id": "medmcqa_4dc1b44d-d73a-4a31-b7e9-5fd37494beb1",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.8881629463942902
+    },
+    {
+      "question_id": "medqa_7092",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9677160530260642
+    },
+    {
+      "question_id": "medmcqa_205c5ffe-0ce0-4ca8-b718-2c5fe5fbd5bf",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9097712729130033
+    },
+    {
+      "question_id": "medmcqa_ce933437-26ed-4702-99d0-639cbcc3cb85",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.939972491437864
+    },
+    {
+      "question_id": "medqa_7257",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9682567640787343
+    },
+    {
+      "question_id": "medmcqa_7bd09988-58f8-412b-9183-8926869273cd",
+      "source": "medmcqa",
+      "category": "Anatomy",
+      "top1_score": 0.9353085036812564
+    },
+    {
+      "question_id": "medqa_1666",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.971053350649313
+    },
+    {
+      "question_id": "medmcqa_56d9adb7-bdb8-4468-9c3f-c3f523f90415",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9527883822188166
+    },
+    {
+      "question_id": "medmcqa_3249b822-aee3-46c1-818d-9e25d05830ad",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9368469133764668
+    },
+    {
+      "question_id": "medqa_6627",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9662276376080099
+    },
+    {
+      "question_id": "medmcqa_9bbff51a-c15a-4ec6-a956-310e0d78f50a",
+      "source": "medmcqa",
+      "category": "Surgery",
+      "top1_score": 0.9583778806847257
+    },
+    {
+      "question_id": "medqa_2022",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9707483495355196
+    },
+    {
+      "question_id": "medqa_7798",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9673077992034169
+    },
+    {
+      "question_id": "medqa_2679",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9658251158371065
+    },
+    {
+      "question_id": "medmcqa_b7089702-b256-4033-a9af-ac82fb0c164b",
+      "source": "medmcqa",
+      "category": "Unknown",
+      "top1_score": 0.9440565805108051
+    },
+    {
+      "question_id": "medmcqa_f9ced61d-abb0-49c1-8f93-bb02fed95cd3",
+      "source": "medmcqa",
+      "category": "Surgery",
+      "top1_score": 0.9449326462494756
+    },
+    {
+      "question_id": "medmcqa_8eada6c1-b7ff-496f-8ae1-d7c1b566a236",
+      "source": "medmcqa",
+      "category": "Pathology",
+      "top1_score": 0.9143648255954088
+    },
+    {
+      "question_id": "medqa_3773",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9649128309373467
+    },
+    {
+      "question_id": "medmcqa_ca907d57-07fe-4f2a-bf11-e80e3a9a168a",
+      "source": "medmcqa",
+      "category": "Anaesthesia",
+      "top1_score": 0.9422858870044822
+    },
+    {
+      "question_id": "medqa_666",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9675289073471075
+    },
+    {
+      "question_id": "medmcqa_238a60f4-c5de-4fa7-81cf-fbe9e3229705",
+      "source": "medmcqa",
+      "category": "Pathology",
+      "top1_score": 0.9227867818702208
+    },
+    {
+      "question_id": "medqa_8352",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9682046358263209
+    },
+    {
+      "question_id": "medmcqa_e39ef277-c799-4a4c-b9d8-e620cea539b6",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9577521870644334
+    },
+    {
+      "question_id": "medqa_6570",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9682628404434009
+    },
+    {
+      "question_id": "medqa_2516",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9756288917211327
+    },
+    {
+      "question_id": "medmcqa_d77f12e5-f6a9-4f41-a493-ee66cba4fe38",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.951895115514576
+    },
+    {
+      "question_id": "medmcqa_a35df978-f2e9-4c80-a1fa-ba42e2d05173",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9563594701301148
+    },
+    {
+      "question_id": "medmcqa_e10f6909-3a7c-4407-8338-89702713dd58",
+      "source": "medmcqa",
+      "category": "Surgery",
+      "top1_score": 0.9416781324645862
+    },
+    {
+      "question_id": "medqa_1331",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9630642346233242
+    },
+    {
+      "question_id": "medmcqa_406a82bc-e519-4072-bf21-2c3c5e21a9a4",
+      "source": "medmcqa",
+      "category": "Pathology",
+      "top1_score": 0.9608769667944255
+    },
+    {
+      "question_id": "medqa_8151",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9672162103379515
+    },
+    {
+      "question_id": "medmcqa_9f14e963-515d-4f16-af4d-490efa024361",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9293819529737769
+    },
+    {
+      "question_id": "medmcqa_88e6aad6-28eb-4d20-8e9f-92e2f0732fc6",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9291602827590888
+    },
+    {
+      "question_id": "medqa_2578",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9727975426397327
+    },
+    {
+      "question_id": "medmcqa_16f0024d-eadc-4b52-96b4-35f1e22e9af2",
+      "source": "medmcqa",
+      "category": "Pathology",
+      "top1_score": 0.9659875909779628
+    },
+    {
+      "question_id": "medmcqa_83002d71-20e3-439b-9ae6-00b3323bad84",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.948738849009095
+    },
+    {
+      "question_id": "medqa_952",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9597596224235864
+    },
+    {
+      "question_id": "medmcqa_761d031c-0374-4bf3-a46f-d4e076f8055e",
+      "source": "medmcqa",
+      "category": "Orthopaedics",
+      "top1_score": 0.9345059158846456
+    },
+    {
+      "question_id": "medmcqa_2de1f1dd-d0e7-491c-b2bb-19d3bb3236a5",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9502394369220355
+    },
+    {
+      "question_id": "medmcqa_689b7012-8ffa-4b07-91bb-2a35ea6400ac",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9553581175494824
+    },
+    {
+      "question_id": "medqa_3397",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9651681204671131
+    },
+    {
+      "question_id": "medqa_73",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9625314410957766
+    },
+    {
+      "question_id": "medmcqa_0e0cb193-991e-4e1f-a32e-5c0bde777d83",
+      "source": "medmcqa",
+      "category": "Anatomy",
+      "top1_score": 0.9305889134247204
+    },
+    {
+      "question_id": "medqa_3392",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9665966632021457
+    },
+    {
+      "question_id": "medqa_8149",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9202741128789867
+    },
+    {
+      "question_id": "medmcqa_4ca5937d-a090-4222-a0bc-91b32c4a7c9f",
+      "source": "medmcqa",
+      "category": "Radiology",
+      "top1_score": 0.9140994122622635
+    },
+    {
+      "question_id": "medqa_2023",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9688840919512799
+    },
+    {
+      "question_id": "medqa_3874",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9646354694982604
+    },
+    {
+      "question_id": "medmcqa_ab0cf533-4fb8-436a-bafa-8a9afc7fd3fa",
+      "source": "medmcqa",
+      "category": "Surgery",
+      "top1_score": 0.8744607933066754
+    },
+    {
+      "question_id": "medmcqa_9c57a717-eaf6-4b40-a22a-0bf58cea82b7",
+      "source": "medmcqa",
+      "category": "Surgery",
+      "top1_score": 0.9358254948160756
+    },
+    {
+      "question_id": "medmcqa_ed744bc0-ee1e-48fb-ba6f-9b5bbb870e33",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.929179349869493
+    },
+    {
+      "question_id": "medqa_5669",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9676138319890069
+    },
+    {
+      "question_id": "medqa_3430",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9616548490897775
+    },
+    {
+      "question_id": "medqa_2192",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9685807631255118
+    },
+    {
+      "question_id": "medmcqa_a648d58b-c3d7-47b3-b610-f0649ffc852b",
+      "source": "medmcqa",
+      "category": "Surgery",
+      "top1_score": 0.9482557031863567
+    },
+    {
+      "question_id": "medqa_8402",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9698538916070186
+    },
+    {
+      "question_id": "medqa_3612",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9731939592072203
+    },
+    {
+      "question_id": "medmcqa_fdc46434-f9d6-40cb-85bf-ba5fad998a51",
+      "source": "medmcqa",
+      "category": "Surgery",
+      "top1_score": 0.9351008097524227
+    },
+    {
+      "question_id": "medmcqa_ce224628-150f-4734-80c0-b2bd98e5d50d",
+      "source": "medmcqa",
+      "category": "Biochemistry",
+      "top1_score": 0.9443436440157053
+    },
+    {
+      "question_id": "medmcqa_d332b5ae-dc52-46e7-90ce-a37c83e0b5de",
+      "source": "medmcqa",
+      "category": "Anatomy",
+      "top1_score": 0.9256501108977774
+    },
+    {
+      "question_id": "medmcqa_425b87a1-43e6-4751-85b6-2bdf52196919",
+      "source": "medmcqa",
+      "category": "Medicine",
+      "top1_score": 0.9276920206348697
+    },
+    {
+      "question_id": "medqa_7852",
+      "source": "medqa",
+      "category": "Cardiology",
+      "top1_score": 0.9701450894787645
+    }
+  ]
+}

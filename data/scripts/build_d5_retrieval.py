@@ -3,7 +3,7 @@ import re
 import hashlib
 from collections import defaultdict
 
-D4_CHUNKS_FILE = r"Knowledge_Base\indexed_chunks\D4_cardiology_kb.jsonl"
+D4_CHUNKS_FILE = r"knowledge base\indexed chunks\D4_cardiology_kb.jsonl"
 D2_TEST_FILE = "D2_test_clean.jsonl"
 OUTPUT_D5_FILE = "D5_retrieval_benchmark.jsonl"
 MANIFEST_FILE = "D5_manifest.txt"

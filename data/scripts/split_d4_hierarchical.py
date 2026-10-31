@@ -4,8 +4,8 @@ import json
 import hashlib
 from pypdf import PdfReader
 
-GUIDELINES_DIR = os.path.join("Knowledge_Base", "raw_guidelines")
-OUTPUT_CHUNKS_DIR = os.path.join("Knowledge_Base", "indexed_chunks")
+GUIDELINES_DIR = os.path.join("knowledge base", "raw guidelines")
+OUTPUT_CHUNKS_DIR = os.path.join("knowledge base", "indexed chunks")
 OUTPUT_FILE = os.path.join(OUTPUT_CHUNKS_DIR, "D4_cardiology_kb_hierarchical.jsonl")
 MANIFEST_FILE = os.path.join("manifests", "D4_manifest.txt")
 

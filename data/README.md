@@ -1,16 +1,16 @@
 # Benchmark Dataset
 
-A multi-tiered, contamination-controlled evaluation benchmark designed to assess clinical diagnostic reasoning, perturbation sensitivity, retrieval-augmented generation (RAG), and progressive multi-stage inquiry in cardiovascular medicine.
+A multi-tiered, locally prepared evaluation suite for cardiology-oriented QA, perturbations, guideline retrieval, and staged case prompts. Its components have different provenance and validation levels; not every artifact is a gold benchmark or an independent clinical cohort. See the repository-level [experiment report](../docs/REPORT.md) for measured pipeline results and caveats.
 
 ---
 
 ## 1. Benchmark Suite Overview
 
-The dataset consists of six distinct, cryptographically verified assets (**D1–D6**). All splits have undergone deduplication, near-duplicate scrubbing ($\text{word-Jaccard} \ge 0.80$), OCR damage repair, and audit validation against external cross-split leakage.
+The dataset consists of six hash-manifested assets (D1-D6). D2 was deduplicated and checked for exact and near-duplicate overlap across splits. OCR cleanup was attempted, but the audit flags four OCR-damage markers in D2 validation and four in D2 test; review these records before calling the split fully clean.
 
 | Asset | Sub-Split / Arm | Items ($N$) | Format | Key Evaluation Purpose |
 | :--- | :--- | :---: | :---: | :--- |
-| **D1** | Staged Real Cases | **118** | `.jsonl` | Longitudinal, real-world clinical reasoning (2025–2026 cases; CC-BY). |
+| **D1** | Staged Real Cases | **100** | `.jsonl` | Longitudinal, real-world clinical reasoning (2025–2026 cases; CC-BY). |
 | **D2** | Holdout Test Split | **609** | `.jsonl` | Primary evaluation MCQ benchmark (273 MedQA vignettes + 336 MedMCQA items). |
 | | Validation Split | **613** | `.jsonl` | Hyperparameter tuning, prompt engineering, and few-shot calibration. |
 | | Training Split | **4,910** | `.jsonl` | Clean, deduplicated supervised fine-tuning / exemplar pool. |
@@ -19,22 +19,22 @@ The dataset consists of six distinct, cryptographically verified assets (**D1–
 | | P4 (Safe Numeric Jitter) | **200** | `.jsonl` | Robustness to non-critical vital sign variations without crossing clinical cutoffs. |
 | | P5 (Finding Stripping) | **21** | `.jsonl` | Diagnostic robustness when pathognomonic physical exam and biopsy anchors are stripped. |
 | **D4** | Arm 1 (Naive Fixed Window) | **959** | `.jsonl` | Sliding-window retrieval corpus (380 words/chunk, 50-word overlap). |
-| | Arm 2 (Hierarchical) | **569** | `.jsonl` | Heading-aware structured guideline index from ESC and ACC/AHA guidelines. |
-| **D5** | Retrieval Pairs | **46** | `.jsonl` | Golden query-to-chunk pairs for evaluation of Recall@$K$, MRR, and Hit Rate. |
-| **D6** | Progressive Reveal | **118** | `.jsonl` | Multi-stage diagnostic trajectories measuring dynamic belief updates (Steps 1 $\to$ 2 $\to$ 3). |
+| | Arm 2 (Hierarchical) | **1,055** | `.jsonl` | Heading-aware structured guideline index from ESC and ACC/AHA guidelines. |
+| **D5** | Retrieval Candidate Pairs | **46** | `.jsonl` | Heuristically generated query-to-chunk candidates; not human-judged relevance labels. IDs match fixed D4, not hierarchical D4. |
+| **D6** | Progressive Reveal | **100** | `.jsonl` | Cumulative staged prompts linked to D1 cases; not an independent clinical cohort. |
 
 ---
 
 ## 2. Directory Layout
 
 ```text
-Dataset/
+data/
 ├── README.md                              # Dataset specification and audit documentation
 ├── audit_data.py                          # Automated sanity check and verification script
 ├── audit_report.txt                       # Output log of the data audit
 │
 ├── artifacts/                             # Core frozen data splits
-│   ├── D1_cases_staged.jsonl              # 118 real-world cases structured into 3 clinical stages
+│   ├── D1_cases_staged.jsonl              # 100 published cases structured into 3 clinical stages
 │   ├── D2_test_clean.jsonl                # 609 clean holdout test MCQs
 │   ├── D2_val_clean.jsonl                 # 613 clean validation MCQs
 │   ├── D2_train_clean.jsonl               # 4,910 clean training MCQs
@@ -43,16 +43,16 @@ Dataset/
 │   ├── D3_P4_jitter.jsonl                 # 200 vignettes with band-safe numerical vitals jitter
 │   ├── D3_P5_stripped.jsonl               # 21 vignettes with pathognomonic anchors removed
 │   ├── D5_retrieval_benchmark.jsonl       # 46 query-to-chunk ground-truth pairs
-│   └── D6_progressive_reveal.jsonl        # 118 multi-stage sequential trajectories
+│   └── D6_progressive_reveal.jsonl        # 100 multi-stage sequential trajectories
 │
-├── Knowledge_Base/                        # D4 clinical guidelines corpus
-│   ├── raw_guidelines/                    # Source Open Access guideline PDFs
+├── knowledge base/                        # D4 clinical guidelines corpus
+│   ├── raw guidelines/                    # Source Open Access guideline PDFs
 │   │   ├── ehad191.pdf                    # 2023 ESC Acute Coronary Syndromes Guideline (107 pages)
 │   │   ├── ehag100.pdf                    # 2026 ESC Heart Failure Guideline (112 pages)
 │   │   └── otto-et-al-2020...pdf          # 2020 ACC/AHA Valvular Heart Disease Guideline (156 pages)
-│   └── indexed_chunks/
+│   └── indexed chunks/
 │       ├── D4_cardiology_kb.jsonl         # 959 naive 380-word chunks
-│       └── D4_cardiology_kb_hierarchical.jsonl # 569 heading-aware section chunks
+│       └── D4_cardiology_kb_hierarchical.jsonl # 1,055 heading-aware section chunks
 │
 ├── manifests/                             # Cryptographic SHA-256 manifests
 │   ├── D1_manifest.txt
@@ -127,10 +127,10 @@ Standardized 4-option clinical MCQs. Train, validation, and test splits have 0 e
 ### D4: Guidelines Knowledge Base
 Indexed across 375 pages of ESC (ACS 2023, Heart Failure 2026) and ACC/AHA (Valvular Heart Disease 2020) guidelines:
 * **Arm 1 (`D4_cardiology_kb.jsonl`, $N=959$):** Fixed 380-word windows with 50-word overlap.
-* **Arm 2 (`D4_cardiology_kb_hierarchical.jsonl`, $N=569$):** Parsed by primary and secondary section headings.
+* **Arm 2 (`D4_cardiology_kb_hierarchical.jsonl`, $N=1,055$):** Parsed by primary and secondary section headings.
 
 ### D5: Retrieval Evaluation Benchmark (`D5_retrieval_benchmark.jsonl`)
-Contains 46 golden pairs linking test questions to positive guideline chunk IDs in D4:
+Contains 46 candidate pairs linking test questions to heuristic positive-chunk IDs in D4. The pairs were not human-judged; use them as retrieval candidates pending review, not gold relevance labels. Their IDs match the fixed-window D4 corpus; none match the hierarchical D4 corpus.
 ```json
 {
   "query_id": "medqa_412",
@@ -144,7 +144,7 @@ Contains 46 golden pairs linking test questions to positive guideline chunk IDs 
 ```
 
 ### D6: Progressive Diagnostic Reveal Trajectories (`D6_progressive_reveal.jsonl`)
-Standardized 3-step prompt trajectory to test dynamic multi-step updating:
+Three cumulative prompt steps derived from D1 cases (100/100 DOI-linked; mean word-Jaccard similarity to D1 stages 0.82). Treat D6 as a reformatted view of D1, not an independent evaluation cohort. The intended task is dynamic multi-stage updating:
 * **Step 1:** Initial Presentation & HPI $\to$ Model predicts top-3 differential diagnoses.
 * **Step 2:** Presentation + Physical Exam & Diagnostic Labs $\to$ Model updates and re-ranks differential.
 * **Step 3:** Full Trajectory + Outcome $\to$ Model confirms definitive diagnosis and management.
@@ -157,7 +157,7 @@ All file contents are frozen. Checksums can be validated using SHA-256:
 
 | Artifact Path | Record Count ($N$) | SHA-256 Checksum |
 | :--- | :---: | :--- |
-| `artifacts/D1_cases_staged.jsonl` | 118 | `b62b4b4b2dcf6a3ea5b8fb838b396e0b10eec21bce90e93c2c952f6aa5c15003` |
+| `artifacts/D1_cases_staged.jsonl` | 100 | `d92e30b91a1f36a7724444612dae79676d8a481cfd4a6854027cfd06f32ee66c` |
 | `artifacts/D2_test_clean.jsonl` | 609 | `e2fa56d15a5bf85e9e22e3de96ce554586a86165e2b8ae48823a67603e6437b1` |
 | `artifacts/D2_val_clean.jsonl` | 613 | `c306b38e2f25ba7144d18fa1c7a055ab4a75f0ad96b611acab7a1f8ff06be4d1` |
 | `artifacts/D2_train_clean.jsonl` | 4,910 | `e0f3ffe98b28a36d4c76c1fc581360da689d19fe645d4537ebbf89dd59abc154` |
@@ -166,9 +166,9 @@ All file contents are frozen. Checksums can be validated using SHA-256:
 | `artifacts/D3_P4_jitter.jsonl` | 200 | `aca27db002f8a3460986655e53953a776e318bbdecc6e0b5166657239af6dff7` |
 | `artifacts/D3_P5_stripped.jsonl` | 21 | `ef4cba0fe48d0cd6ce420d57f3849a63bab6be8d19eeb45ef7c2ebc126daa20d` |
 | `artifacts/D5_retrieval_benchmark.jsonl`| 46 | `f86dc24eb0b0e1911dba4b5d49b36900a4d5ea832a27a0e81f0f73fbe6cdb5b5` |
-| `artifacts/D6_progressive_reveal.jsonl`| 118 | `60ddb5c67a671126e6b11e7b21c67734555ba60fbc0e472059dc2805c3554b92` |
-| `Knowledge_Base/indexed_chunks/D4_cardiology_kb.jsonl` | 959 | `8977352040efbee3926d6c4e0641f833c0903ba5abaaf280de080e228e1901b0` |
-| `Knowledge_Base/indexed_chunks/D4_cardiology_kb_hierarchical.jsonl` | 569 | `aca591bdb8bb131a4b18a7c06a31162ced5399dcdefd1b226ceab5ff9618c45c` |
+| `artifacts/D6_progressive_reveal.jsonl`| 100 | `4543a497ada11d65ca0444b2a37ab9d424ae709c97585fc84a8aacd4dede35b3` |
+| `knowledge base/indexed chunks/D4_cardiology_kb.jsonl` | 959 | `8977352040efbee3926d6c4e0641f833c0903ba5abaaf280de080e228e1901b0` |
+| `knowledge base/indexed chunks/D4_cardiology_kb_hierarchical.jsonl` | 1,055 | `949364fad322bc5aa436733d84f5e24f8c76149c6a78c32d3d9ca3257b413b3b` |
 
 ---
 

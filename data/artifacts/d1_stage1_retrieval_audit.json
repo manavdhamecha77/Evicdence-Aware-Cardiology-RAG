@@ -1,0 +1,1415 @@
+{
+  "task": "D1 Stage 1 local retrieval/evidence-gate audit only",
+  "case_count": 100,
+  "retrieval": "lexical",
+  "abstention_threshold": 0.9256,
+  "retry_threshold": 0.9294,
+  "initial_retry_count": 23,
+  "final_abstentions": 10,
+  "coverage_after_retry": 0.9,
+  "initial_top1_score_median": 0.9463516183989272,
+  "diagnostic_accuracy": null,
+  "accuracy_note": "No validated diagnosis matcher is configured; this audit does not score diagnoses.",
+  "records": [
+    {
+      "case_id": "D1_PMC13715631",
+      "year": "2026",
+      "initial_top1_score": 0.9377091355991712,
+      "retry_count": 0,
+      "final_top1_score": 0.9377091355991712,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0285",
+        "KB_HIER_ehad191_0055",
+        "KB_HIER_ehag100_0357",
+        "KB_HIER_ehad191_0034"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13695428",
+      "year": "2026",
+      "initial_top1_score": 0.9512854276896673,
+      "retry_count": 0,
+      "final_top1_score": 0.9512854276896673,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0260",
+        "KB_HIER_ehag100_0294",
+        "KB_HIER_otto-et-al-202_0713",
+        "KB_HIER_otto-et-al-202_0740"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13686352",
+      "year": "2026",
+      "initial_top1_score": 0.9350517061224853,
+      "retry_count": 0,
+      "final_top1_score": 0.9350517061224853,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0238",
+        "KB_HIER_ehag100_0317",
+        "KB_HIER_ehag100_0325",
+        "KB_HIER_ehag100_0294"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13688006",
+      "year": "2026",
+      "initial_top1_score": 0.9106866948784147,
+      "retry_count": 1,
+      "final_top1_score": 0.9234144393646404,
+      "abstained": true,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0272",
+        "KB_HIER_otto-et-al-202_0583",
+        "KB_HIER_otto-et-al-202_0839",
+        "KB_HIER_ehag100_0318"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13280456",
+      "year": "2026",
+      "initial_top1_score": 0.9299332520583308,
+      "retry_count": 0,
+      "final_top1_score": 0.9299332520583308,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0029",
+        "KB_HIER_ehad191_0028",
+        "KB_HIER_ehad191_0027",
+        "KB_HIER_ehad191_0039"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13602975",
+      "year": "2026",
+      "initial_top1_score": 0.9787789375724756,
+      "retry_count": 0,
+      "final_top1_score": 0.9787789375724756,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0837",
+        "KB_HIER_ehag100_0299",
+        "KB_HIER_ehag100_0300",
+        "KB_HIER_ehag100_0311"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13677932",
+      "year": "2026",
+      "initial_top1_score": 0.953423489057622,
+      "retry_count": 0,
+      "final_top1_score": 0.953423489057622,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0264",
+        "KB_HIER_otto-et-al-202_0689",
+        "KB_HIER_ehag100_0311",
+        "KB_HIER_ehad191_0078"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12901848",
+      "year": "2026",
+      "initial_top1_score": 0.9506846670736021,
+      "retry_count": 0,
+      "final_top1_score": 0.9506846670736021,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0264",
+        "KB_HIER_ehag100_0265",
+        "KB_HIER_ehag100_0301",
+        "KB_HIER_ehad191_0103"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13557284",
+      "year": "2026",
+      "initial_top1_score": 0.9351023771503546,
+      "retry_count": 0,
+      "final_top1_score": 0.9351023771503546,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0269",
+        "KB_HIER_ehag100_0307",
+        "KB_HIER_otto-et-al-202_0586",
+        "KB_HIER_ehad191_0066"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13494855",
+      "year": "2026",
+      "initial_top1_score": 0.9419736993452141,
+      "retry_count": 0,
+      "final_top1_score": 0.9419736993452141,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0491",
+        "KB_HIER_ehad191_0099",
+        "KB_HIER_ehag100_0276",
+        "KB_HIER_ehag100_0324"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13614266",
+      "year": "2026",
+      "initial_top1_score": 0.9482817407962293,
+      "retry_count": 0,
+      "final_top1_score": 0.9482817407962293,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0300",
+        "KB_HIER_ehad191_0098",
+        "KB_HIER_ehag100_0319",
+        "KB_HIER_ehag100_0348"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13454716",
+      "year": "2026",
+      "initial_top1_score": 0.9335906860330756,
+      "retry_count": 0,
+      "final_top1_score": 0.9335906860330756,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0269",
+        "KB_HIER_ehag100_0301",
+        "KB_HIER_ehag100_0326",
+        "KB_HIER_ehag100_0322"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13551604",
+      "year": "2026",
+      "initial_top1_score": 0.9519063003872773,
+      "retry_count": 0,
+      "final_top1_score": 0.9519063003872773,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0260",
+        "KB_HIER_otto-et-al-202_0609",
+        "KB_HIER_ehag100_0264",
+        "KB_HIER_otto-et-al-202_0740"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13476944",
+      "year": "2026",
+      "initial_top1_score": 0.9367084771819724,
+      "retry_count": 0,
+      "final_top1_score": 0.9367084771819724,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0707",
+        "KB_HIER_ehad191_0099",
+        "KB_HIER_ehad191_0095",
+        "KB_HIER_otto-et-al-202_0851"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13438288",
+      "year": "2026",
+      "initial_top1_score": 0.9395349594918139,
+      "retry_count": 0,
+      "final_top1_score": 0.9395349594918139,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0914",
+        "KB_HIER_ehad191_0097",
+        "KB_HIER_otto-et-al-202_0602",
+        "KB_HIER_otto-et-al-202_0599"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13593125",
+      "year": "2026",
+      "initial_top1_score": 0.9482801666178289,
+      "retry_count": 0,
+      "final_top1_score": 0.9482801666178289,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_1028",
+        "KB_HIER_ehad191_0033",
+        "KB_HIER_otto-et-al-202_1027",
+        "KB_HIER_otto-et-al-202_0829"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13381791",
+      "year": "2026",
+      "initial_top1_score": 0.953846408045977,
+      "retry_count": 0,
+      "final_top1_score": 0.953846408045977,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0269",
+        "KB_HIER_ehag100_0302",
+        "KB_HIER_ehag100_0318",
+        "KB_HIER_ehag100_0300"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13543674",
+      "year": "2026",
+      "initial_top1_score": 0.9506762031343683,
+      "retry_count": 0,
+      "final_top1_score": 0.9506762031343683,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0276",
+        "KB_HIER_ehag100_0272",
+        "KB_HIER_ehad191_0096",
+        "KB_HIER_ehad191_0093"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12569404",
+      "year": "2025",
+      "initial_top1_score": 0.9481753936678081,
+      "retry_count": 0,
+      "final_top1_score": 0.9481753936678081,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0023",
+        "KB_HIER_ehad191_0097",
+        "KB_HIER_ehad191_0085",
+        "KB_HIER_ehag100_0352"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13561258",
+      "year": "2026",
+      "initial_top1_score": 0.9172815289634193,
+      "retry_count": 1,
+      "final_top1_score": 0.9243279721629669,
+      "abstained": true,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0264",
+        "KB_HIER_ehad191_0112",
+        "KB_HIER_otto-et-al-202_0910",
+        "KB_HIER_ehag100_0263"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13564177",
+      "year": "2026",
+      "initial_top1_score": 0.9167040182376361,
+      "retry_count": 1,
+      "final_top1_score": 0.9323337668873873,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0123",
+        "KB_HIER_ehag100_0302",
+        "KB_HIER_ehag100_0301",
+        "KB_HIER_ehag100_0317"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13399423",
+      "year": "2026",
+      "initial_top1_score": 0.9496026673992096,
+      "retry_count": 0,
+      "final_top1_score": 0.9496026673992096,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0258",
+        "KB_HIER_ehag100_0320",
+        "KB_HIER_otto-et-al-202_0589",
+        "KB_HIER_ehag100_0288"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13256028",
+      "year": "2026",
+      "initial_top1_score": 0.9377355569827953,
+      "retry_count": 0,
+      "final_top1_score": 0.9377355569827953,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0250",
+        "KB_HIER_ehag100_0349",
+        "KB_HIER_ehad191_0106",
+        "KB_HIER_ehad191_0105"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13349109",
+      "year": "2026",
+      "initial_top1_score": 0.9689392703801535,
+      "retry_count": 0,
+      "final_top1_score": 0.9689392703801535,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0269",
+        "KB_HIER_ehag100_0350",
+        "KB_HIER_ehag100_0302",
+        "KB_HIER_ehad191_0025"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12836116",
+      "year": "2025",
+      "initial_top1_score": 0.970779232338056,
+      "retry_count": 0,
+      "final_top1_score": 0.970779232338056,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0348",
+        "KB_HIER_ehag100_0349",
+        "KB_HIER_ehag100_0329",
+        "KB_HIER_ehag100_0351"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13354843",
+      "year": "2026",
+      "initial_top1_score": 0.9314100501306908,
+      "retry_count": 0,
+      "final_top1_score": 0.9314100501306908,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0652",
+        "KB_HIER_otto-et-al-202_0669",
+        "KB_HIER_otto-et-al-202_0972",
+        "KB_HIER_otto-et-al-202_0821"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13695071",
+      "year": "2026",
+      "initial_top1_score": 0.962863172801494,
+      "retry_count": 0,
+      "final_top1_score": 0.962863172801494,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0269",
+        "KB_HIER_ehag100_0301",
+        "KB_HIER_ehag100_0270",
+        "KB_HIER_ehag100_0258"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12833994",
+      "year": "2026",
+      "initial_top1_score": 0.9337118193593641,
+      "retry_count": 0,
+      "final_top1_score": 0.9337118193593641,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0083",
+        "KB_HIER_ehad191_0016",
+        "KB_HIER_ehad191_0011",
+        "KB_HIER_ehad191_0089"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13270483",
+      "year": "2026",
+      "initial_top1_score": 0.9701551133393576,
+      "retry_count": 0,
+      "final_top1_score": 0.9701551133393576,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0314",
+        "KB_HIER_ehag100_0294",
+        "KB_HIER_ehag100_0243",
+        "KB_HIER_ehag100_0329"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13587794",
+      "year": "2026",
+      "initial_top1_score": 0.9402917902024026,
+      "retry_count": 0,
+      "final_top1_score": 0.9402917902024026,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0301",
+        "KB_HIER_otto-et-al-202_0715",
+        "KB_HIER_otto-et-al-202_0926",
+        "KB_HIER_otto-et-al-202_0602"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13717256",
+      "year": "2026",
+      "initial_top1_score": 0.9582590494953706,
+      "retry_count": 0,
+      "final_top1_score": 0.9582590494953706,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0740",
+        "KB_HIER_otto-et-al-202_0912",
+        "KB_HIER_ehad191_0098",
+        "KB_HIER_ehad191_0099"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13467828",
+      "year": "2026",
+      "initial_top1_score": 0.9500955625766628,
+      "retry_count": 0,
+      "final_top1_score": 0.9500955625766628,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0097",
+        "KB_HIER_ehad191_0085",
+        "KB_HIER_ehag100_0318",
+        "KB_HIER_ehag100_0317"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13156971",
+      "year": "2026",
+      "initial_top1_score": 0.9323248615527401,
+      "retry_count": 0,
+      "final_top1_score": 0.9323248615527401,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0034",
+        "KB_HIER_ehad191_0044",
+        "KB_HIER_ehad191_0115",
+        "KB_HIER_ehag100_0348"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13357970",
+      "year": "2026",
+      "initial_top1_score": 0.9541438840994059,
+      "retry_count": 0,
+      "final_top1_score": 0.9541438840994059,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0583",
+        "KB_HIER_ehag100_0260",
+        "KB_HIER_ehag100_0277",
+        "KB_HIER_ehag100_0243"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13677878",
+      "year": "2026",
+      "initial_top1_score": 0.9367078132837534,
+      "retry_count": 0,
+      "final_top1_score": 0.9367078132837534,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0749",
+        "KB_HIER_ehad191_0103",
+        "KB_HIER_ehag100_0297",
+        "KB_HIER_ehag100_0262"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13569873",
+      "year": "2026",
+      "initial_top1_score": 0.942550793169177,
+      "retry_count": 0,
+      "final_top1_score": 0.942550793169177,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0023",
+        "KB_HIER_ehad191_0033",
+        "KB_HIER_ehad191_0024",
+        "KB_HIER_ehad191_0025"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13102433",
+      "year": "2026",
+      "initial_top1_score": 0.9218779426652056,
+      "retry_count": 1,
+      "final_top1_score": 0.9218779426652056,
+      "abstained": true,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0095",
+        "KB_HIER_ehad191_0039",
+        "KB_HIER_ehad191_0139",
+        "KB_HIER_ehad191_0027"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13061347",
+      "year": "2026",
+      "initial_top1_score": 0.914935581100657,
+      "retry_count": 1,
+      "final_top1_score": 0.914935581100657,
+      "abstained": true,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0095",
+        "KB_HIER_ehad191_0031",
+        "KB_HIER_ehad191_0120",
+        "KB_HIER_otto-et-al-202_0851"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13198378",
+      "year": "2026",
+      "initial_top1_score": 0.9590400102212066,
+      "retry_count": 0,
+      "final_top1_score": 0.9590400102212066,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0652",
+        "KB_HIER_ehag100_0269",
+        "KB_HIER_ehag100_0270",
+        "KB_HIER_ehag100_0329"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13679997",
+      "year": "2026",
+      "initial_top1_score": 0.915108624437004,
+      "retry_count": 1,
+      "final_top1_score": 0.9262770896682062,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0250",
+        "KB_HIER_ehag100_0257",
+        "KB_HIER_ehag100_0319",
+        "KB_HIER_ehag100_0509"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13096853",
+      "year": "2026",
+      "initial_top1_score": 0.9345800551024184,
+      "retry_count": 0,
+      "final_top1_score": 0.9345800551024184,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0093",
+        "KB_HIER_ehad191_0034",
+        "KB_HIER_ehad191_0139",
+        "KB_HIER_ehad191_0021"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12908186",
+      "year": "2026",
+      "initial_top1_score": 0.9378527679220092,
+      "retry_count": 0,
+      "final_top1_score": 0.9378527679220092,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0099",
+        "KB_HIER_ehad191_0017",
+        "KB_HIER_otto-et-al-202_0910",
+        "KB_HIER_ehad191_0016"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12178273",
+      "year": "2025",
+      "initial_top1_score": 0.9592168087777843,
+      "retry_count": 0,
+      "final_top1_score": 0.9592168087777843,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0097",
+        "KB_HIER_ehad191_0057",
+        "KB_HIER_ehag100_0310",
+        "KB_HIER_ehad191_0101"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12531258",
+      "year": "2025",
+      "initial_top1_score": 0.9477523756523079,
+      "retry_count": 0,
+      "final_top1_score": 0.9477523756523079,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0296",
+        "KB_HIER_ehag100_0441",
+        "KB_HIER_ehag100_0440",
+        "KB_HIER_ehag100_0333"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13367569",
+      "year": "2026",
+      "initial_top1_score": 0.9584905317658822,
+      "retry_count": 0,
+      "final_top1_score": 0.9584905317658822,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0650",
+        "KB_HIER_ehag100_0329",
+        "KB_HIER_otto-et-al-202_0599",
+        "KB_HIER_ehag100_0301"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12998256",
+      "year": "2025",
+      "initial_top1_score": 0.9709139861028689,
+      "retry_count": 0,
+      "final_top1_score": 0.9709139861028689,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0269",
+        "KB_HIER_ehad191_0025",
+        "KB_HIER_otto-et-al-202_0713",
+        "KB_HIER_ehag100_0270"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13152034",
+      "year": "2026",
+      "initial_top1_score": 0.9481987401979804,
+      "retry_count": 0,
+      "final_top1_score": 0.9481987401979804,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0300",
+        "KB_HIER_ehag100_0260",
+        "KB_HIER_ehag100_0258",
+        "KB_HIER_ehag100_0242"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13042237",
+      "year": "2026",
+      "initial_top1_score": 0.9560899815043693,
+      "retry_count": 0,
+      "final_top1_score": 0.9560899815043693,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0044",
+        "KB_HIER_ehad191_0082",
+        "KB_HIER_ehad191_0095",
+        "KB_HIER_ehad191_0061"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13014351",
+      "year": "2026",
+      "initial_top1_score": 0.9336771653452088,
+      "retry_count": 0,
+      "final_top1_score": 0.9336771653452088,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0302",
+        "KB_HIER_ehag100_0301",
+        "KB_HIER_ehag100_0300",
+        "KB_HIER_ehag100_0269"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13627902",
+      "year": "2026",
+      "initial_top1_score": 0.9284378238892143,
+      "retry_count": 1,
+      "final_top1_score": 0.9363053490083046,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0087",
+        "KB_HIER_ehag100_0299",
+        "KB_HIER_otto-et-al-202_0749",
+        "KB_HIER_ehad191_0085"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12405751",
+      "year": "2025",
+      "initial_top1_score": 0.924589540026051,
+      "retry_count": 1,
+      "final_top1_score": 0.924589540026051,
+      "abstained": true,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0762",
+        "KB_HIER_ehag100_0351",
+        "KB_HIER_ehag100_0271",
+        "KB_HIER_ehag100_0270"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13595196",
+      "year": "2026",
+      "initial_top1_score": 0.9514729894522984,
+      "retry_count": 0,
+      "final_top1_score": 0.9514729894522984,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0099",
+        "KB_HIER_ehag100_0491",
+        "KB_HIER_ehag100_0278",
+        "KB_HIER_ehad191_0115"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12689077",
+      "year": "2025",
+      "initial_top1_score": 0.9756636550115055,
+      "retry_count": 0,
+      "final_top1_score": 0.9756636550115055,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0102",
+        "KB_HIER_ehad191_0137",
+        "KB_HIER_ehad191_0101",
+        "KB_HIER_ehad191_0115"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12926197",
+      "year": "2026",
+      "initial_top1_score": 0.964169477644385,
+      "retry_count": 0,
+      "final_top1_score": 0.964169477644385,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0051",
+        "KB_HIER_ehad191_0044",
+        "KB_HIER_ehad191_0025",
+        "KB_HIER_ehad191_0046"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13554535",
+      "year": "2026",
+      "initial_top1_score": 0.9280660913346817,
+      "retry_count": 1,
+      "final_top1_score": 0.9280660913346817,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0910",
+        "KB_HIER_ehag100_0258",
+        "KB_HIER_ehag100_0330",
+        "KB_HIER_ehag100_0295"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12973436",
+      "year": "2026",
+      "initial_top1_score": 0.9408643584589345,
+      "retry_count": 0,
+      "final_top1_score": 0.9408643584589345,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0842",
+        "KB_HIER_ehag100_0301",
+        "KB_HIER_ehag100_0335",
+        "KB_HIER_ehag100_0300"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13367093",
+      "year": "2026",
+      "initial_top1_score": 0.9470499133204819,
+      "retry_count": 0,
+      "final_top1_score": 0.9470499133204819,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0093",
+        "KB_HIER_ehad191_0087",
+        "KB_HIER_ehad191_0059",
+        "KB_HIER_otto-et-al-202_0650"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12820395",
+      "year": "2026",
+      "initial_top1_score": 0.9716810390435512,
+      "retry_count": 0,
+      "final_top1_score": 0.9716810390435512,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0599",
+        "KB_HIER_ehad191_0084",
+        "KB_HIER_ehad191_0089",
+        "KB_HIER_ehad191_0091"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13388277",
+      "year": "2026",
+      "initial_top1_score": 0.9605700427265206,
+      "retry_count": 0,
+      "final_top1_score": 0.9605700427265206,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0275",
+        "KB_HIER_ehad191_0093",
+        "KB_HIER_ehad191_0082",
+        "KB_HIER_otto-et-al-202_0740"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13236608",
+      "year": "2026",
+      "initial_top1_score": 0.9218186971511989,
+      "retry_count": 1,
+      "final_top1_score": 0.9308358564143573,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0269",
+        "KB_HIER_otto-et-al-202_0761",
+        "KB_HIER_ehad191_0016",
+        "KB_HIER_ehag100_0301"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13199964",
+      "year": "2026",
+      "initial_top1_score": 0.9638310360650063,
+      "retry_count": 0,
+      "final_top1_score": 0.9638310360650063,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0085",
+        "KB_HIER_ehad191_0093",
+        "KB_HIER_ehad191_0018",
+        "KB_HIER_ehad191_0131"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13625939",
+      "year": "2026",
+      "initial_top1_score": 0.9476158912208797,
+      "retry_count": 0,
+      "final_top1_score": 0.9476158912208797,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0051",
+        "KB_HIER_ehad191_0082",
+        "KB_HIER_ehad191_0016",
+        "KB_HIER_ehad191_0188"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12499628",
+      "year": "2025",
+      "initial_top1_score": 0.9708741707319217,
+      "retry_count": 0,
+      "final_top1_score": 0.9708741707319217,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0010",
+        "KB_HIER_ehad191_0091",
+        "KB_HIER_ehad191_0085",
+        "KB_HIER_ehad191_0083"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13041092",
+      "year": "2026",
+      "initial_top1_score": 0.9412704271975597,
+      "retry_count": 0,
+      "final_top1_score": 0.9412704271975597,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0348",
+        "KB_HIER_ehag100_0480",
+        "KB_HIER_ehag100_0317",
+        "KB_HIER_ehag100_0257"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13454950",
+      "year": "2026",
+      "initial_top1_score": 0.9528593420890016,
+      "retry_count": 0,
+      "final_top1_score": 0.9528593420890016,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0026",
+        "KB_HIER_ehad191_0016",
+        "KB_HIER_ehad191_0044",
+        "KB_HIER_ehad191_0051"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13492170",
+      "year": "2026",
+      "initial_top1_score": 0.9483390734860377,
+      "retry_count": 0,
+      "final_top1_score": 0.9483390734860377,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0706",
+        "KB_HIER_otto-et-al-202_0981",
+        "KB_HIER_ehad191_0201",
+        "KB_HIER_otto-et-al-202_0772"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13715626",
+      "year": "2026",
+      "initial_top1_score": 0.9358278562045763,
+      "retry_count": 0,
+      "final_top1_score": 0.9358278562045763,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0028",
+        "KB_HIER_ehag100_0300",
+        "KB_HIER_ehad191_0046",
+        "KB_HIER_otto-et-al-202_0629"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12709126",
+      "year": "2025",
+      "initial_top1_score": 0.9415731245488388,
+      "retry_count": 0,
+      "final_top1_score": 0.9415731245488388,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0397",
+        "KB_HIER_ehag100_0274",
+        "KB_HIER_ehag100_0243",
+        "KB_HIER_ehad191_0034"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13541553",
+      "year": "2026",
+      "initial_top1_score": 0.9243576664580537,
+      "retry_count": 1,
+      "final_top1_score": 0.9243576664580537,
+      "abstained": true,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0650",
+        "KB_HIER_ehad191_0099",
+        "KB_HIER_ehag100_0295",
+        "KB_HIER_otto-et-al-202_0603"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13569877",
+      "year": "2026",
+      "initial_top1_score": 0.9526636560088462,
+      "retry_count": 0,
+      "final_top1_score": 0.9526636560088462,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0025",
+        "KB_HIER_ehad191_0024",
+        "KB_HIER_ehag100_0310",
+        "KB_HIER_ehag100_0283"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12902741",
+      "year": "2026",
+      "initial_top1_score": 0.9510401110240584,
+      "retry_count": 0,
+      "final_top1_score": 0.9510401110240584,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0023",
+        "KB_HIER_ehad191_0039",
+        "KB_HIER_ehad191_0011",
+        "KB_HIER_ehad191_0009"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12855112",
+      "year": "2025",
+      "initial_top1_score": 0.9410681590988716,
+      "retry_count": 0,
+      "final_top1_score": 0.9410681590988716,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0106",
+        "KB_HIER_ehag100_0337",
+        "KB_HIER_ehad191_0107",
+        "KB_HIER_otto-et-al-202_0617"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13632790",
+      "year": "2026",
+      "initial_top1_score": 0.9473218417905543,
+      "retry_count": 0,
+      "final_top1_score": 0.9473218417905543,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0109",
+        "KB_HIER_ehad191_0114",
+        "KB_HIER_ehad191_0112",
+        "KB_HIER_ehad191_0139"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12768004",
+      "year": "2026",
+      "initial_top1_score": 0.943224780904642,
+      "retry_count": 0,
+      "final_top1_score": 0.943224780904642,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0023",
+        "KB_HIER_ehad191_0029",
+        "KB_HIER_ehad191_0044",
+        "KB_HIER_ehad191_0024"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13391848",
+      "year": "2026",
+      "initial_top1_score": 0.9286114403960347,
+      "retry_count": 1,
+      "final_top1_score": 0.9286114403960347,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0258",
+        "KB_HIER_otto-et-al-202_0818",
+        "KB_HIER_ehag100_0301",
+        "KB_HIER_ehad191_0028"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13502879",
+      "year": "2026",
+      "initial_top1_score": 0.9210065284528856,
+      "retry_count": 1,
+      "final_top1_score": 0.9323776757083783,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0023",
+        "KB_HIER_ehad191_0025",
+        "KB_HIER_ehad191_0021",
+        "KB_HIER_otto-et-al-202_0761"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12856373",
+      "year": "2026",
+      "initial_top1_score": 0.9748630374196432,
+      "retry_count": 0,
+      "final_top1_score": 0.9748630374196432,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0740",
+        "KB_HIER_ehad191_0027",
+        "KB_HIER_ehad191_0025",
+        "KB_HIER_otto-et-al-202_0583"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12978024",
+      "year": "2026",
+      "initial_top1_score": 0.9492853549039098,
+      "retry_count": 0,
+      "final_top1_score": 0.9492853549039098,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0137",
+        "KB_HIER_ehad191_0099",
+        "KB_HIER_ehad191_0100",
+        "KB_HIER_ehad191_0101"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13155472",
+      "year": "2026",
+      "initial_top1_score": 0.9556851838223962,
+      "retry_count": 0,
+      "final_top1_score": 0.9556851838223962,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0896",
+        "KB_HIER_otto-et-al-202_0895",
+        "KB_HIER_otto-et-al-202_0905",
+        "KB_HIER_otto-et-al-202_0902"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12872814",
+      "year": "2025",
+      "initial_top1_score": 0.9107307054362241,
+      "retry_count": 1,
+      "final_top1_score": 0.9236499456660372,
+      "abstained": true,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0264",
+        "KB_HIER_ehag100_0379",
+        "KB_HIER_ehag100_0357",
+        "KB_HIER_ehag100_0350"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13717947",
+      "year": "2026",
+      "initial_top1_score": 0.9821127938502154,
+      "retry_count": 0,
+      "final_top1_score": 0.9821127938502154,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0042",
+        "KB_HIER_ehad191_0027",
+        "KB_HIER_ehad191_0132",
+        "KB_HIER_ehad191_0025"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12623078",
+      "year": "2025",
+      "initial_top1_score": 0.9176714546950683,
+      "retry_count": 1,
+      "final_top1_score": 0.9317139310186364,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0603",
+        "KB_HIER_ehag100_0339",
+        "KB_HIER_ehad191_0095",
+        "KB_HIER_ehad191_0103"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12908979",
+      "year": "2026",
+      "initial_top1_score": 0.9171782917359506,
+      "retry_count": 1,
+      "final_top1_score": 0.9171782917359506,
+      "abstained": true,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0097",
+        "KB_HIER_ehag100_0337",
+        "KB_HIER_ehad191_0043",
+        "KB_HIER_ehad191_0106"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13296109",
+      "year": "2026",
+      "initial_top1_score": 0.9800702542379175,
+      "retry_count": 0,
+      "final_top1_score": 0.9800702542379175,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0243",
+        "KB_HIER_ehag100_0271",
+        "KB_HIER_ehag100_0292",
+        "KB_HIER_ehag100_0329"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13346070",
+      "year": "2026",
+      "initial_top1_score": 0.9263154876844879,
+      "retry_count": 1,
+      "final_top1_score": 0.93658025550182,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0236",
+        "KB_HIER_ehag100_0326",
+        "KB_HIER_ehag100_0328",
+        "KB_HIER_ehag100_0270"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13547851",
+      "year": "2026",
+      "initial_top1_score": 0.9456533234773725,
+      "retry_count": 0,
+      "final_top1_score": 0.9456533234773725,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0016",
+        "KB_HIER_ehad191_0009",
+        "KB_HIER_ehad191_0024",
+        "KB_HIER_ehad191_0139"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13072488",
+      "year": "2026",
+      "initial_top1_score": 0.9507142257774928,
+      "retry_count": 0,
+      "final_top1_score": 0.9507142257774928,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0755",
+        "KB_HIER_otto-et-al-202_0689",
+        "KB_HIER_ehag100_0260",
+        "KB_HIER_ehag100_0271"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12914463",
+      "year": "2026",
+      "initial_top1_score": 0.9428378728959671,
+      "retry_count": 0,
+      "final_top1_score": 0.9428378728959671,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_0639",
+        "KB_HIER_otto-et-al-202_0776",
+        "KB_HIER_otto-et-al-202_0779",
+        "KB_HIER_otto-et-al-202_0782"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13038586",
+      "year": "2026",
+      "initial_top1_score": 0.9638214020772097,
+      "retry_count": 0,
+      "final_top1_score": 0.9638214020772097,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_otto-et-al-202_1023",
+        "KB_HIER_ehag100_0309",
+        "KB_HIER_ehag100_0300",
+        "KB_HIER_otto-et-al-202_0828"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12819726",
+      "year": "2025",
+      "initial_top1_score": 0.9673302963988156,
+      "retry_count": 0,
+      "final_top1_score": 0.9673302963988156,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0113",
+        "KB_HIER_ehad191_0028",
+        "KB_HIER_ehad191_0029",
+        "KB_HIER_ehad191_0044"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13583453",
+      "year": "2026",
+      "initial_top1_score": 0.8865271580189639,
+      "retry_count": 1,
+      "final_top1_score": 0.9042343172825368,
+      "abstained": true,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0124",
+        "KB_HIER_ehad191_0123",
+        "KB_HIER_ehad191_0139",
+        "KB_HIER_ehad191_0027"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13355853",
+      "year": "2026",
+      "initial_top1_score": 0.9187013794757523,
+      "retry_count": 1,
+      "final_top1_score": 0.9286257774630529,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0023",
+        "KB_HIER_ehad191_0024",
+        "KB_HIER_ehad191_0017",
+        "KB_HIER_ehad191_0025"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12483343",
+      "year": "2025",
+      "initial_top1_score": 0.9193581328580149,
+      "retry_count": 1,
+      "final_top1_score": 0.9307302102213416,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0016",
+        "KB_HIER_ehad191_0086",
+        "KB_HIER_ehad191_0025",
+        "KB_HIER_ehad191_0087"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13180634",
+      "year": "2026",
+      "initial_top1_score": 0.9795791795886064,
+      "retry_count": 0,
+      "final_top1_score": 0.9795791795886064,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0329",
+        "KB_HIER_otto-et-al-202_0609",
+        "KB_HIER_ehag100_0350",
+        "KB_HIER_ehag100_0268"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13447949",
+      "year": "2026",
+      "initial_top1_score": 0.9747632877728759,
+      "retry_count": 0,
+      "final_top1_score": 0.9747632877728759,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0027",
+        "KB_HIER_ehad191_0010",
+        "KB_HIER_ehad191_0024",
+        "KB_HIER_ehad191_0091"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12440945",
+      "year": "2025",
+      "initial_top1_score": 0.9199954073476487,
+      "retry_count": 1,
+      "final_top1_score": 0.9260896751072695,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehag100_0313",
+        "KB_HIER_ehag100_0353",
+        "KB_HIER_ehad191_0019",
+        "KB_HIER_ehad191_0074"
+      ]
+    },
+    {
+      "case_id": "D1_PMC12699021",
+      "year": "2025",
+      "initial_top1_score": 0.9129361872664525,
+      "retry_count": 1,
+      "final_top1_score": 0.9176020984021306,
+      "abstained": true,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0017",
+        "KB_HIER_ehag100_0270",
+        "KB_HIER_ehad191_0095",
+        "KB_HIER_ehad191_0119"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13479649",
+      "year": "2026",
+      "initial_top1_score": 0.9566488428991297,
+      "retry_count": 0,
+      "final_top1_score": 0.9566488428991297,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0009",
+        "KB_HIER_ehad191_0036",
+        "KB_HIER_ehad191_0055",
+        "KB_HIER_ehad191_0018"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13620056",
+      "year": "2026",
+      "initial_top1_score": 0.9234446764054687,
+      "retry_count": 1,
+      "final_top1_score": 0.9283930428344812,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0097",
+        "KB_HIER_ehad191_0023",
+        "KB_HIER_ehad191_0034",
+        "KB_HIER_ehad191_0021"
+      ]
+    },
+    {
+      "case_id": "D1_PMC13591823",
+      "year": "2026",
+      "initial_top1_score": 0.9376498141552847,
+      "retry_count": 0,
+      "final_top1_score": 0.9376498141552847,
+      "abstained": false,
+      "retrieved_chunk_ids": [
+        "KB_HIER_ehad191_0093",
+        "KB_HIER_ehad191_0017",
+        "KB_HIER_ehad191_0018",
+        "KB_HIER_ehag100_0272"
+      ]
+    }
+  ]
+}

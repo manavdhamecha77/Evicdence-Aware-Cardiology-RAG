@@ -1,0 +1,32 @@
+[
+  {
+    "document_id": "ehad191.pdf",
+    "title": "2023 ESC Guidelines for the management of acute coronary syndromes",
+    "publisher": "European Society of Cardiology / Oxford University Press",
+    "url": "https://doi.org/10.1093/eurheartj/ehad191",
+    "published_date": "2023",
+    "accessed_date": "unknown",
+    "license_note": "ESC guideline text states personal and educational use only, no commercial use, and reproduction requires written permission. Keep source and derived chunks local unless permission is confirmed.",
+    "path": "knowledge base/raw guidelines/ehad191.pdf"
+  },
+  {
+    "document_id": "ehag100.pdf",
+    "title": "2026 ESC Guidelines for the management of heart failure",
+    "publisher": "European Society of Cardiology / Oxford University Press",
+    "url": "https://doi.org/10.1093/eurheartj/ehag100",
+    "published_date": "2026",
+    "accessed_date": "unknown",
+    "license_note": "ESC guideline text states personal and educational use only, no commercial use, and reproduction requires written permission. Keep source and derived chunks local unless permission is confirmed.",
+    "path": "knowledge base/raw guidelines/ehag100.pdf"
+  },
+  {
+    "document_id": "otto-et-al-2020-2020-acc-aha-guideline-for-the-management-of-patients-with-valvular-heart-disease-a-report-of-the.pdf",
+    "title": "2020 ACC/AHA Guideline for the Management of Patients With Valvular Heart Disease",
+    "publisher": "American College of Cardiology / American Heart Association",
+    "url": "https://doi.org/10.1161/CIR.0000000000000923",
+    "published_date": "2020",
+    "accessed_date": "unknown",
+    "license_note": "The article states that multiple copies, modification, alteration, enhancement, or distribution require express AHA permission. Keep source and derived chunks local unless permission is confirmed.",
+    "path": "knowledge base/raw guidelines/otto-et-al-2020-2020-acc-aha-guideline-for-the-management-of-patients-with-valvular-heart-disease-a-report-of-the.pdf"
+  }
+]

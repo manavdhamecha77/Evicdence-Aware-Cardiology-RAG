@@ -1,0 +1,33 @@
+{
+  "run_id": "d3_p5_earag",
+  "created_at": "2026-10-31T19:23:46.444140+00:00",
+  "corpus_path": "data\\knowledge base\\indexed chunks\\D4_cardiology_kb_hierarchical.jsonl",
+  "corpus_sha256": "949364fad322bc5aa436733d84f5e24f8c76149c6a78c32d3d9ca3257b413b3b",
+  "source_manifest": "data\\manifests\\D4_sources.json",
+  "source_manifest_sha256": "636274763d7cc721a8e14593b529f48b493926bd7140a44e412baacb88eac820",
+  "questions_sha256": "46c2b6aa3ac43c2ebe463c8dc7dc3a071896646394d6e59d09b955fc9e0c930e",
+  "questions_count": 21,
+  "systems": [
+    "ea_rag"
+  ],
+  "generator": "ollama_openai_compatible",
+  "model": "gemma4:31b",
+  "retrieval": "lexical",
+  "embedding_model": null,
+  "embedding_revision": null,
+  "embedding_cache_key": null,
+  "config": {
+    "top_k": 4,
+    "min_score": 0.9256,
+    "retry_min_score": 0.9294,
+    "dense_min_score": 0.45,
+    "dense_retry_min_score": 0.47,
+    "min_passages": 1,
+    "chunk_words": 550,
+    "overlap_words": 80,
+    "seed": 17,
+    "include_options_in_query": false,
+    "sample_size": null,
+    "sample_seed": 17
+  }
+}
