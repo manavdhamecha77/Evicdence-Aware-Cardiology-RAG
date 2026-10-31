@@ -11,3 +11,4 @@ data/evaluation/All-2479-Answers-retrieved-from-MedQuAD.csv
 data/evaluation/All-qrels_LiveQAMed2017-TestQuestions_2479_Judged-Answers.txt
 artifacts/*
 !artifacts/.gitkeep
+temp/
