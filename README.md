@@ -2,6 +2,8 @@
 
 A local research prototype comparing fixed top-k retrieval with evidence-gated retrieval, one bounded retry, and abstention for cardiology educational questions.
 
+**Current experiment:** D2 test (609 items), P5 stress test (21 items), and a D1 retrieval-only audit are complete. The full report includes methods, artifacts, results, limits, and research framing: [docs/REPORT.md](docs/REPORT.md).
+
 ## Current implementation
 
 - Source manifest validation and ingestion from local UTF-8 text or Markdown files.
@@ -12,7 +14,9 @@ A local research prototype comparing fixed top-k retrieval with evidence-gated r
 - Optional OpenAI Chat Completions generation with a grounded prompt; API/network errors are returned as explicit failed runs.
 - Ablations without abstention and without adaptation/retry, plus a minimal Streamlit interface.
 
-No source corpus or benchmark questions are bundled. Add permitted public educational source files and document each one's provenance and usage terms in `data/sources/manifest.json`. Do not use patient records. Do not report experiment results until you have supplied a corpus/questions and run the evaluation.
+Frozen D1-D6 benchmark data and D4 pre-chunked corpora are under `data/`. The saved experiment report documents the current results and evaluation limits.
+
+The local `data/` folder contains frozen D1-D6 artifacts and D4 pre-chunked guideline corpora. The currently reported evaluation used hierarchical D4 and D2 MCQs. It used lexical retrieval and Ollama Cloud `gemma4:31b`; it did not use embeddings or a vector database. See the experiment report for counts, hashes, metrics, and limits. Check source and dataset licenses before external processing or redistribution.
 
 ## Local MedQA-USMLE question data
 
@@ -95,6 +99,25 @@ python -m cardio_rag.cli evaluate --questions data/evaluation/dev.jsonl --run-id
 python -m cardio_rag.cli evaluate --questions data/evaluation/dev.jsonl --run-id pilot-dense --retrieval dense
 ```
 
+### Run the D2 MCQ split on pre-chunked D4
+
+`data/` contains pre-chunked corpora. Pass the D4 source metadata file so the loader can preserve each existing `chunk_id` and attach its provenance. For a local Ollama server, configure `OLLAMA_MODEL=llama3.1:8b` and `OLLAMA_BASE_URL=http://localhost:11434/v1`; no API key is needed for localhost. The extractive fallback cannot answer MCQs, so the evaluator stops rather than reporting fake accuracy if no language model is configured.
+
+```powershell
+$env:UV_CACHE_DIR = Join-Path (Get-Location) '.uv-cache'
+$env:PYTHONPATH = 'src'
+$env:OLLAMA_MODEL = 'llama3.1:8b'
+$env:OLLAMA_BASE_URL = 'http://localhost:11434/v1'
+uv run --python .venv\Scripts\python.exe python -m cardio_rag.cli evaluate `
+  --questions data\artifacts\D2_val_clean.jsonl `
+  --corpus 'data\knowledge base\indexed chunks\D4_cardiology_kb_hierarchical.jsonl' `
+  --source-manifest data\manifests\D4_sources.json `
+  --retrieval dense --sample-size 50 --include-options-in-query `
+  --output data\artifacts\runs --run-id d2-val-50
+```
+
+The evaluator scores MCQ letters with a strict `FINAL ANSWER: A` parser, reports accuracy and coverage, and disables the personal-symptom chat guard only for evaluation. The frozen D2 run used stem-only retrieval and thresholds selected from D2 validation score quantiles. D5 labels currently match only the fixed-window D4 IDs and are keyword-generated candidates, not human-judged relevance labels.
+
 Lexical retrieval is the default and requires no model download. Dense retrieval defaults to `sentence-transformers/all-MiniLM-L6-v2`; set `CARDIO_RAG_EMBEDDING_MODEL` or pass `--embedding-model` to select another model. Set `CARDIO_RAG_EMBEDDING_REVISION` or pass `--embedding-revision` to pin a model revision. The initial dense evidence threshold is a configurable heuristic and must be tuned on development data only.
 
 Question JSONL records require a non-empty `question`; optional fields include `question_id`, `reference_answer`, and `relevant_chunk_ids`. The evaluator runs baseline, EA-RAG, no-abstention, and no-adaptation variants on the same records. It writes per-question `artifacts/pilot.jsonl`, aggregate `artifacts/pilot_metrics.json`, and configuration `artifacts/pilot_manifest.json`. It calculates citation structure validity, Hit@k when relevance labels exist, a simple reference-answer substring rate when answers are provided, abstention, and latency. Substring match is not a clinical correctness metric. Unsupported-answer and semantic citation support rates require human review and are not inferred by this prototype.
@@ -109,7 +132,7 @@ python -m streamlit run src/cardio_rag/app.py
 
 This is an educational research prototype, not a medical device, diagnostic service, or substitute for professional care. The UI warns users not to enter personal health information and the pipeline returns a safety notice for recognized first-person symptom queries. The notice uses simple keyword matching and is not a triage system. Never use outputs for clinical decisions.
 
-Retrieval scores are lexical ranking signals or cosine similarities, not calibrated confidence. Query intent and evidence sufficiency use transparent heuristics. The extractive fallback copies source sentences; citations are checked structurally and are not proof of semantic support. There is no PDF/HTML parser, automatic contradiction detector, reviewed benchmark, or measured research result yet.
+Retrieval scores are ranking signals, not calibrated confidence. Query intent and evidence sufficiency use transparent heuristics. The extractive fallback copies source sentences; citations are checked structurally and are not proof of semantic support. Current results are exploratory: the D2 selective-accuracy difference was not significant on the answered subset, P5 did not trigger abstention, and D1 diagnostic accuracy is unavailable. There is no automatic contradiction detector or clinician-validated benchmark.
 
 ## Research reference
 

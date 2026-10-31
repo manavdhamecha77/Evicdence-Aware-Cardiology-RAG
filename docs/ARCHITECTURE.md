@@ -2,29 +2,29 @@
 
 ## 1. Purpose
 
-Build a reproducible research prototype inspired by *Cardiology-Chat: A Multi-LLMs Powered System for Cardiac Diagnostic Reasoning and Clinical Support* (IEEE Journal of Translational Engineering in Health and Medicine, 2026, DOI: 10.1109/JTEHM.2026.3668755).
+This repository contains a reproducible research prototype inspired by *Cardiology-Chat: A Multi-LLMs Powered System for Cardiac Diagnostic Reasoning and Clinical Support* (IEEE Journal of Translational Engineering in Health and Medicine, 2026, DOI: 10.1109/JTEHM.2026.3668755). The completed evaluation and measured limitations are documented in [REPORT.md](REPORT.md).
 
 The baseline paper combines (1) symptom/query preprocessing, (2) retrieval from a cardiovascular vector knowledge base, and (3) a fine-tuned LLM for a final response. It also describes generator–validator reasoning-data construction. Its reported evaluation uses 182 cardiology multiple-choice questions and 49 anonymized clinical cases; reported headline results are 0.796 QA accuracy and 0.807 clinical-case F1. These are paper-reported results, not targets or results of this implementation.
 
-This project will implement a smaller, auditable prototype rather than attempt to reproduce the original model training or private clinical evaluation.
+This project implements a smaller, auditable prototype; it does not reproduce the original model training or private clinical evaluation.
 
-## 2. Proposed novelty
+## 2. Research framing and novelty limits
 
-**Primary research question:** Can an evidence-aware, query-adaptive retrieval and abstention layer improve answer grounding and reduce unsupported answers compared with ordinary top-k RAG in cardiology question answering?
+**Primary research question:** On a fixed cardiology-oriented guideline corpus and MCQ set, does a lexical-score evidence gate with one bounded retry and abstention improve selective answer quality over fixed top-k RAG?
 
-The proposed contribution is a lightweight **Evidence-Aware Adaptive RAG (EA-RAG)** pipeline with three explicit mechanisms:
+The implemented **Evidence-Aware Adaptive RAG (EA-RAG)** pipeline includes:
 
 1. **Query-aware retrieval:** classify each query into a coarse intent (definition, risk factor, symptom/condition, diagnostic test, treatment, or comparison) and adjust retrieval settings or query expansion accordingly. If intent classification is unreliable, use the standard retrieval path.
-2. **Evidence sufficiency gate:** assess retrieved context using measurable signals—retrieval similarity, agreement across retrieved passages, and whether at least one passage directly supports the answer. If evidence is weak, retrieve again with a rewritten query; if still weak, abstain from a specific answer and explain that the sources are insufficient.
-3. **Citation-grounded output:** require every substantive factual claim to cite retrieved source chunks. A simple post-check flags claims without citations and citations whose chunk IDs were not actually retrieved.
+2. **Evidence score gate:** threshold the top lexical score, retry once below a higher cutoff, and abstain if the final score remains below the lower cutoff. This version does not measure passage agreement or direct entailment.
+3. **Citation checks:** open-ended outputs use structural citation checks. MCQ citations are optional; any IDs included must match retrieved chunks. Neither check verifies semantic support.
 
-The novelty claim is deliberately modest: this is a proposed system-level combination and evaluation hypothesis, not a claim that adaptive retrieval or abstention has never been studied. Before a paper submission, perform a targeted literature search and narrow the novelty statement based on related work.
+Adaptive retrieval, corrective retrieval, and selective prediction are established research areas. The project does not claim algorithmic novelty for these mechanisms. Its candidate contribution is the cardiology-oriented paired evaluation and its empirical coverage/robustness findings; the current test shows no significant selective-accuracy improvement and no P5 abstentions. See the experiment report for related work and a paper-safe contribution statement.
 
 ## 3. Scope and non-goals
 
 ### In scope
 - Cardiology-focused question answering over a small, documented public-source corpus.
-- Ingestion, chunking, embeddings, vector retrieval, optional reranking, answer generation, citations, evidence sufficiency checks, and abstention.
+- Pre-chunked D4 loading, lexical retrieval, optional dense retrieval code, answer generation, citation checks, evidence gating, retry, and abstention.
 - A baseline RAG implementation and an EA-RAG variant evaluated on the same questions.
 - Reproducible metrics, error analysis, configuration, logs, and a small demo interface.
 

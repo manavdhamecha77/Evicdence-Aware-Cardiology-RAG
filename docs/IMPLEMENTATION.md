@@ -2,6 +2,8 @@
 
 ## 1. Target
 
+> **Status note:** this file is the original implementation roadmap, not a live status report. D2, P5, and D1 retrieval-only results are documented in [REPORT.md](REPORT.md); completed items and remaining research work are tracked in [TODO.md](TODO.md).
+
 Deliver a working, reproducible prototype called **Evidence-Aware Adaptive RAG (EA-RAG)** for cardiology educational question answering. The central experiment compares it with fixed top-k RAG on a shared question set.
 
 The baseline paper, *Cardiology-Chat* (2026), uses symptom preprocessing, cardiovascular knowledge retrieval, and a fine-tuned LLM, supported by validated reasoning-data construction. Reproducing its model training, 27k-example dataset, or private 49-case evaluation is outside this plan. The implementation focuses on a narrower, testable system-level hypothesis: evidence-aware retry and abstention may reduce unsupported answers while retaining useful answer coverage.
